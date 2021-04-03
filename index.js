@@ -8,13 +8,12 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 
 // Connect to MongoDB
-mongoose
-  .connect(
+mongoose.connect(
     'mongodb://mongo:27017/docker-node-mongo',
     { useNewUrlParser: true }
-  )
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+)
+.then(() => console.log('MongoDB Connected'))
+.catch(err => console.log(err));
 
 const Item = require('./models/Item');
 
